@@ -137,7 +137,18 @@ class CountryList extends StatelessWidget {
                     },
                     leading: Text(country.emoji),
                     title: Text(country.name),
-                    subtitle: Text(country.language.isNotEmpty?country.language[0].name:""),
+                    subtitle: SizedBox(
+                         height: 30,
+                         width: MediaQuery.of(context).size.width,
+                         child: ListView.builder(
+                           scrollDirection: Axis.horizontal,
+                           physics: const BouncingScrollPhysics(),
+                           itemCount: country.language.length,
+                           itemBuilder: (context,indexSub){
+                             return Text("${country.language[indexSub].name} ");
+                           },
+                         ),
+                       ),
                   );
                 },
               ),

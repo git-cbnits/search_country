@@ -7,6 +7,7 @@ import 'package:get_it/get_it.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:serach_country/application/search_country/search_country_bloc.dart';
 import 'package:serach_country/infrastructure/search_country/dtos/country_dtos.dart';
+import 'package:serach_country/infrastructure/search_country/dtos/language_dtos.dart';
 import 'package:serach_country/presentation/routes/router.gr.dart';
 import 'package:serach_country/presentation/search_country/country_list.dart';
 
@@ -94,7 +95,9 @@ void main(){
               emoji: '',
               currency: 'INR',
               code: '91',
-              language: []
+              language: [
+                LanguageDto(code: '91', name: 'Hindi', native: 'Hindi', rtl: false),
+              ]
           ),
         ],
         countryList: [
@@ -106,7 +109,9 @@ void main(){
               emoji: '',
               currency: 'INR',
               code: '91',
-              language: []
+              language: [
+                LanguageDto(code: '91', name: 'Hindi', native: 'Hindi', rtl: false),
+              ]
           ),
         ],
       ));

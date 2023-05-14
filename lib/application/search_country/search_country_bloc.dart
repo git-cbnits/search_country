@@ -97,7 +97,7 @@ class SearchCountryBloc extends Bloc<SearchCountryEvent,SearchCountryState>{
           );
         },
         filterCountryList: (_FilterCountryList value) {
-          List<CountryDto> list = state.countryList.where((element) => element.language.isNotEmpty && state.filterList.indexWhere((element1) => element1.isSelected && element1.name.contains(element.language[0].name))>-1).toList();
+          List<CountryDto> list = state.countryList.where((element) => element.language.isNotEmpty && state.filterList.indexWhere((element1) => element1.isSelected && element.language.where((element3) => element3.name == element1.name).length>0)>-1).toList();
           emit(
             state.copyWith(
               isFilterApplied: true,
